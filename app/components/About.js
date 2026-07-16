@@ -12,7 +12,7 @@ export default function About() {
     setIsLoading(true)
     
     // URL file CV (ganti dengan path file CV Anda)
-    const cvUrl = '/cv-sarah.pdf'
+    const cvUrl = '/CV SARAH NURBILQIS AULIA.pdf'
     
     // Buat link download
     const link = document.createElement('a')
