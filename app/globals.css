@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+/* =========================
+   FONT CLASSES
+========================= */
+
+.font-poppins {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-srisakdi {
+  font-family: var(--font-srisakdi), cursive;
+}
+
+/* Angela White - untuk Contact Me!! */
+.font-angela-white {
+  font-family: 'Great Vibes', 'Angela White', cursive;
+}
+
+/* Savannah - untuk ssaraaPurple (pakai Playfair Display) */
+.font-savannah {
+  font-family: var(--font-playfair), 'Playfair Display', 'Savannah', serif;
+  font-style: italic;
+}
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background: #E8ECEF;
+  color: #1C2B48;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8ECEF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#8EB1D1, #A7C7E7);
+  border-radius: 999px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container-custom {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+  padding: 90px 0;
+}
+
+/* =========================
+   GLASS - Dengan Baby Blue Eyes
+========================= */
+
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(167, 199, 231, 0.2);
+  box-shadow: 0 4px 24px rgba(142, 177, 209, 0.06);
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 4px 24px rgba(142, 177, 209, 0.1);
+}
+
+/* =========================
+   CARD - Dengan Light Blue Grey
+========================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(196, 216, 229, 0.3);
+  border-radius: 18px;
+  padding: 24px;
+  transition: .4s;
+  box-shadow: 0 2px 16px rgba(142, 177, 209, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(142, 177, 209, 0.3);
+  box-shadow: 0 8px 32px rgba(142, 177, 209, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   BADGE - Dengan Cool Cerulean
+========================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(142, 177, 209, 0.12);
+  color: #8EB1D1;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+/* =========================
+   GRADIENT TEXT - Cool Cerulean ke Baby Blue Eyes
+========================= */
+
+.gradient {
+  background: linear-gradient(135deg, #8EB1D1, #A7C7E7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =========================
+   GRID BACKGROUND
+========================= */
+
+.bg-grid {
+  background-image:
+    radial-gradient(rgba(142, 177, 209, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+/* =========================
+   FLOAT
+========================= */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* =========================
+   SPIN
+========================= */
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* =========================
+   FADE UP
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp .8s ease forwards;
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: #A7C7E7;
+  color: #1C2B48;
+}
+
+/* =========================
+   NAVBAR ANIMATIONS
+========================= */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gradient-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(142, 177, 209, 0) 0%,
+    rgba(142, 177, 209, 0.06) 50%,
+    rgba(142, 177, 209, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow-delay {
+  animation: pulse-slow 6s ease-in-out infinite 2s;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 8s ease-in-out infinite 3s;
+}
+
+.animate-float-slow {
+  animation: float 10s ease-in-out infinite 1s;
+}
