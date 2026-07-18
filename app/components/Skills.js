@@ -163,7 +163,7 @@ export default function Skills() {
         <div className="relative w-full max-w-2xl mx-auto">
           <div className="absolute -left-4 sm:-left-8 md:-left-12 bottom-0 animate-windmill-slow">
             <Image
-              src="/kincir.png"
+              src="/kin.png"
               alt="Kincir Angin"
               width={200}
               height={100}
@@ -179,7 +179,7 @@ export default function Skills() {
         <div className="relative w-full max-w-2xl mx-auto">
           <div className="absolute -right-4 sm:-right-8 md:-right-12 bottom-0 animate-windmill-slow-reverse">
             <Image
-              src="/kincir.png"
+              src="/kin.png"
               alt="Kincir Angin"
               width={180}
               height={90}
@@ -202,13 +202,13 @@ export default function Skills() {
         />
       </div>
 
-      <div className="absolute bottom-32 sm:bottom-36 md:bottom-40 lg:bottom-44 right-[5%] sm:right-[8%] z-10 pointer-events-none animate-float-flower-delay">
+      <div className="absolute bottom-32 sm:bottom-36 md:bottom-40 lg:bottom-44 right-[5%] sm:right-[6%] z-10 pointer-events-none animate-float-flower-delay">
         <Image
-          src="/ikan.png"
+          src="/ppp.png"
           alt="Bunga"
           width={44}
           height={44}
-          className="w-6 h-6 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-14 lg:h-14 object-contain"
+          className="w-6 h-6 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-20 lg:h-30 object-contain"
           priority
         />
       </div>
@@ -227,7 +227,7 @@ export default function Skills() {
       {/* Lebah - DIPERBESAR */}
       <div className="absolute bottom-28 sm:bottom-32 md:bottom-36 lg:bottom-40 left-[20%] sm:left-[22%] z-10 pointer-events-none animate-bee">
         <Image
-          src="/kum.png"
+          src="/kumbang.png"
           alt="Lebah"
           width={40}
           height={40}
@@ -238,7 +238,7 @@ export default function Skills() {
 
       <div className="absolute bottom-32 sm:bottom-36 md:bottom-40 lg:bottom-44 right-[20%] sm:right-[22%] z-10 pointer-events-none animate-bee-delay">
         <Image
-          src="/kum.png"
+          src="/kumbang.png"
           alt="Lebah"
           width={36}
           height={36}

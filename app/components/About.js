@@ -27,7 +27,7 @@ export default function About() {
 
   // Fungsi untuk scroll ke footer
   const scrollToFooter = () => {
-    const footer = document.getElementById('footer')
+    const footer = document.getElementById('contact')
     if (footer) {
       footer.scrollIntoView({ 
         behavior: 'smooth',
