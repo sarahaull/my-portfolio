@@ -179,7 +179,7 @@ export default function Skills() {
         <div className="relative w-full max-w-2xl mx-auto">
           <div className="absolute -right-4 sm:-right-8 md:-right-12 bottom-0 animate-windmill-slow-reverse">
             <Image
-              src="/kin.png"
+              src="/bin.png"
               alt="Kincir Angin"
               width={180}
               height={90}
