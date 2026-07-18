@@ -83,66 +83,139 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 w-full h-[30%] bg-gradient-to-t from-[#8EB1D1]/30 via-[#A7C7E7]/10 to-transparent pointer-events-none z-0" />
 
       {/* ============================================== */}
-      {/* ANIMASI OMBAK */}
+      {/* ANIMASI OMBAK ELEGAN - LAPISAN GANDA */}
       {/* ============================================== */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Ombak 1 - Bergerak Pelan */}
         <div 
           className="absolute top-0 left-0 w-[200%] h-full"
           style={{
             background: `
               linear-gradient(90deg, 
                 transparent 0%,
-                rgba(142, 177, 209, 0.5) 8%,
-                rgba(167, 199, 231, 0.35) 18%,
-                rgba(142, 177, 209, 0.25) 28%,
-                transparent 38%,
-                transparent 55%,
-                rgba(142, 177, 209, 0.5) 65%,
-                rgba(167, 199, 231, 0.35) 75%,
-                rgba(142, 177, 209, 0.25) 85%,
-                transparent 95%
+                rgba(142, 177, 209, 0.35) 5%,
+                rgba(167, 199, 231, 0.25) 12%,
+                rgba(142, 177, 209, 0.15) 20%,
+                transparent 30%,
+                transparent 45%,
+                rgba(142, 177, 209, 0.3) 52%,
+                rgba(167, 199, 231, 0.2) 60%,
+                rgba(142, 177, 209, 0.15) 68%,
+                transparent 78%,
+                transparent 90%,
+                rgba(142, 177, 209, 0.2) 95%,
+                transparent 100%
               )
             `,
-            animation: 'waveFlow 8s ease-in-out infinite',
+            animation: 'waveFlow 12s ease-in-out infinite',
+            filter: 'blur(2px)',
           }}
         />
+        
+        {/* Ombak 2 - Berlawanan */}
         <div 
-          className="absolute top-1/4 left-0 w-[200%] h-3/4"
+          className="absolute top-[10%] left-0 w-[200%] h-[80%]"
           style={{
             background: `
               linear-gradient(270deg, 
                 transparent 0%,
-                rgba(167, 199, 231, 0.4) 12%,
-                rgba(142, 177, 209, 0.25) 25%,
-                rgba(167, 199, 231, 0.15) 38%,
-                transparent 50%,
-                transparent 60%,
-                rgba(167, 199, 231, 0.4) 72%,
-                rgba(142, 177, 209, 0.25) 82%,
-                rgba(167, 199, 231, 0.15) 92%,
+                rgba(167, 199, 231, 0.3) 8%,
+                rgba(142, 177, 209, 0.2) 18%,
+                rgba(167, 199, 231, 0.1) 28%,
+                transparent 40%,
+                transparent 55%,
+                rgba(167, 199, 231, 0.25) 65%,
+                rgba(142, 177, 209, 0.15) 75%,
+                rgba(167, 199, 231, 0.1) 85%,
                 transparent 100%
               )
             `,
-            animation: 'waveFlowReverse 11s ease-in-out infinite',
+            animation: 'waveFlowReverse 16s ease-in-out infinite',
+            filter: 'blur(3px)',
+            opacity: 0.7,
           }}
         />
+
+        {/* Ombak 3 - Lebih Cepat dan Tipis */}
         <div 
-          className="absolute top-1/2 left-0 w-[200%] h-1/3"
+          className="absolute top-[20%] left-0 w-[200%] h-[60%]"
           style={{
             background: `
               linear-gradient(90deg, 
                 transparent 0%,
-                rgba(100, 149, 237, 0.3) 15%,
-                rgba(167, 199, 231, 0.2) 30%,
-                transparent 45%,
-                transparent 55%,
-                rgba(100, 149, 237, 0.3) 70%,
-                rgba(167, 199, 231, 0.2) 85%,
+                rgba(147, 197, 253, 0.2) 10%,
+                rgba(167, 199, 231, 0.1) 22%,
+                transparent 35%,
+                transparent 50%,
+                rgba(147, 197, 253, 0.15) 60%,
+                rgba(167, 199, 231, 0.1) 72%,
+                transparent 85%,
                 transparent 100%
               )
             `,
-            animation: 'waveFlow 14s ease-in-out infinite',
-            opacity: 0.6,
+            animation: 'waveFlowFast 8s ease-in-out infinite',
+            filter: 'blur(4px)',
+            opacity: 0.5,
+          }}
+        />
+
+        {/* Ombak 4 - Gelombang Halus di Bawah */}
+        <div 
+          className="absolute bottom-0 left-0 w-[200%] h-[40%]"
+          style={{
+            background: `
+              linear-gradient(180deg, 
+                transparent 0%,
+                rgba(142, 177, 209, 0.2) 30%,
+                rgba(167, 199, 231, 0.3) 50%,
+                rgba(142, 177, 209, 0.4) 70%,
+                rgba(167, 199, 231, 0.3) 85%,
+                transparent 100%
+              )
+            `,
+            animation: 'waveFlowVertical 14s ease-in-out infinite',
+            filter: 'blur(5px)',
+          }}
+        />
+
+        {/* Ombak 5 - Garis-garis Halus */}
+        <div 
+          className="absolute top-[30%] left-0 w-[200%] h-[40%]"
+          style={{
+            background: `
+              repeating-linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(167, 199, 231, 0.05) 2%,
+                transparent 4%,
+                transparent 8%,
+                rgba(167, 199, 231, 0.03) 10%,
+                transparent 12%
+              )
+            `,
+            animation: 'waveFlowSlow 20s linear infinite',
+            filter: 'blur(1px)',
+          }}
+        />
+
+        {/* Ombak 6 - Efek Shimmer */}
+        <div 
+          className="absolute top-[15%] left-0 w-[200%] h-[70%]"
+          style={{
+            background: `
+              radial-gradient(
+                ellipse at 30% 50%,
+                rgba(255, 255, 255, 0.05) 0%,
+                transparent 50%
+              ),
+              radial-gradient(
+                ellipse at 70% 30%,
+                rgba(255, 255, 255, 0.04) 0%,
+                transparent 40%
+              )
+            `,
+            animation: 'waveShimmer 10s ease-in-out infinite',
+            filter: 'blur(10px)',
           }}
         />
       </div>
@@ -487,25 +560,73 @@ export default function Hero() {
       <style jsx>{`
         @keyframes waveFlow {
           0% {
-            transform: translateX(-25%);
+            transform: translateX(-25%) scaleX(1);
           }
           50% {
-            transform: translateX(0%);
+            transform: translateX(0%) scaleX(1.05);
           }
           100% {
-            transform: translateX(-25%);
+            transform: translateX(-25%) scaleX(1);
           }
         }
 
         @keyframes waveFlowReverse {
           0% {
-            transform: translateX(25%);
+            transform: translateX(25%) scaleX(1);
           }
           50% {
-            transform: translateX(0%);
+            transform: translateX(0%) scaleX(0.95);
           }
           100% {
-            transform: translateX(25%);
+            transform: translateX(25%) scaleX(1);
+          }
+        }
+
+        @keyframes waveFlowFast {
+          0% {
+            transform: translateX(-30%) scaleX(1);
+          }
+          50% {
+            transform: translateX(5%) scaleX(1.08);
+          }
+          100% {
+            transform: translateX(-30%) scaleX(1);
+          }
+        }
+
+        @keyframes waveFlowVertical {
+          0% {
+            transform: translateY(0%) scaleY(1);
+          }
+          50% {
+            transform: translateY(-5%) scaleY(1.1);
+          }
+          100% {
+            transform: translateY(0%) scaleY(1);
+          }
+        }
+
+        @keyframes waveFlowSlow {
+          0% {
+            transform: translateX(-50%) scaleX(1);
+          }
+          100% {
+            transform: translateX(0%) scaleX(1);
+          }
+        }
+
+        @keyframes waveShimmer {
+          0% {
+            opacity: 0.3;
+            transform: translateX(-20%) scale(1);
+          }
+          50% {
+            opacity: 0.8;
+            transform: translateX(10%) scale(1.1);
+          }
+          100% {
+            opacity: 0.3;
+            transform: translateX(-20%) scale(1);
           }
         }
 
