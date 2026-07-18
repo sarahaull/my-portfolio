@@ -193,7 +193,7 @@ const projects = [
     category: 'web',
     figmaLink: 'https://www.figma.com/design/tMk4htZLwTToMAvNBrvjtA/Sistem-Pengaduan-Masyarakat?node-id=0-1&t=ysCciWQkfwOGx5uy-1',
     githubLink: 'https://github.com/sarahaull/sistem-pengaduan-masyarakat',
-    demoLink: 'https://heaven-recipe.vercel.app',
+    demoLink: 'https://heavenrecipe-project.vercel.app',
     showFigma: false,   // <-- Perubahan: tombol Figma dihilangkan
     showGithub: true,
     showDemo: true,
