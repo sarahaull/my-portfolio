@@ -8,9 +8,10 @@ import {
   FaInstagram,
   FaLinkedin
 } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
 
-// ---------- SPARKLE UNTUK BUNGA (diperkecil & warnanya dibedakan) ----------
-const FlowerSparkle = ({ delay = 0, duration = 2, x = 0, y = 0, color = 'yellow-200' }) => {
+// ---------- SPARKLE UNTUK BUNGA (kecil & berwarna) ----------
+const FlowerSparkle = ({ delay = 0, duration = 2, x = 0, y = 0, color = 'yellow' }) => {
   const colorMap = {
     'yellow': 'bg-yellow-200 shadow-[0_0_10px_3px_rgba(255,240,150,0.8)]',
     'pink': 'bg-pink-200 shadow-[0_0_10px_3px_rgba(255,180,200,0.8)]',
@@ -19,11 +20,10 @@ const FlowerSparkle = ({ delay = 0, duration = 2, x = 0, y = 0, color = 'yellow-
     'white': 'bg-white shadow-[0_0_10px_3px_rgba(255,255,255,0.8)]',
     'emerald': 'bg-emerald-200 shadow-[0_0_10px_3px_rgba(150,255,200,0.8)]',
   }
-  const selectedColor = colorMap[color] || colorMap['yellow']
 
   return (
     <motion.span
-      className={`absolute w-1.5 h-1.5 rounded-full ${selectedColor}`}
+      className={`absolute w-1.5 h-1.5 rounded-full ${colorMap[color]}`}
       style={{ left: x, top: y }}
       initial={{ opacity: 0, scale: 0 }}
       animate={{
@@ -43,7 +43,7 @@ const FlowerSparkle = ({ delay = 0, duration = 2, x = 0, y = 0, color = 'yellow-
   )
 }
 
-// ---------- SPARKLE JATUH DARI ATAS (banyak & estetik) ----------
+// ---------- SPARKLE JATUH DARI ATAS ----------
 const FallingSparkle = ({ delay = 0, x = 0, size = 2, color = 'white', duration = 6 }) => {
   const colorClass = {
     'white': 'bg-white/80 shadow-[0_0_6px_2px_rgba(255,255,255,0.6)]',
@@ -81,21 +81,26 @@ const FallingSparkle = ({ delay = 0, x = 0, size = 2, color = 'white', duration 
 }
 
 export default function Footer() {
-  // Kumpulan partikel jatuh (40 partikel dengan variasi)
-  const fallingSparkles = []
-  const colors = ['white', 'pink', 'purple', 'blue', 'gold', 'emerald']
-  for (let i = 0; i < 45; i++) {
-    const x = Math.random() * 100
-    const size = 1.5 + Math.random() * 3
-    const color = colors[Math.floor(Math.random() * colors.length)]
-    const delay = Math.random() * 8
-    const duration = 5 + Math.random() * 5
-    fallingSparkles.push({ x, size, color, delay, duration, id: i })
-  }
+  const [fallingSparkles, setFallingSparkles] = useState([])
+
+  useEffect(() => {
+    const colors = ['white', 'pink', 'purple', 'blue', 'gold', 'emerald']
+    const newSparkles = []
+    const count = 80 // 🔥 ubah sesuai keinginan (80–120) untuk lebih banyak
+    for (let i = 0; i < count; i++) {
+      const x = Math.random() * 100
+      const size = 1.5 + Math.random() * 3.5 // ukuran 1.5–5px
+      const color = colors[Math.floor(Math.random() * colors.length)]
+      const delay = Math.random() * 10 // delay 0–10 detik
+      const duration = 5 + Math.random() * 6 // durasi 5–11 detik
+      newSparkles.push({ x, size, color, delay, duration, id: i })
+    }
+    setFallingSparkles(newSparkles)
+  }, [])
 
   return (
     <footer className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url("/bgx.jpg")' }}
@@ -103,7 +108,7 @@ export default function Footer() {
         <div className="absolute inset-0 bg-gradient-to-b backdrop-blur-[1px]" />
       </div>
 
-      {/* ====== HUJAN SPARKLE DARI ATAS ====== */}
+      {/* ====== HUJAN SPARKLE DARI ATAS (banyak & estetik) ====== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
         {fallingSparkles.map((sp) => (
           <FallingSparkle
@@ -117,9 +122,9 @@ export default function Footer() {
         ))}
       </div>
 
-      {/* ====== BUNGA DENGAN SPARKLE KECIL & BERWARNA ====== */}
+      {/* ====== BUNGA DENGAN SPARKLE KECIL & BERWARNA (tetap) ====== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        {/* Bunga 1 - warna pink */}
+        {/* Bunga 1 */}
         <div className="absolute" style={{ left: '5%', top: '10%' }}>
           <motion.div
             style={{ width: '70px', height: '70px' }}
@@ -134,7 +139,7 @@ export default function Footer() {
           <FlowerSparkle delay={2.5} duration={3.5} x={-5} y={-18} color="purple" />
         </div>
 
-        {/* Bunga 2 - warna purple */}
+        {/* Bunga 2 */}
         <div className="absolute" style={{ right: '8%', top: '20%' }}>
           <motion.div
             style={{ width: '60px', height: '60px' }}
@@ -149,7 +154,7 @@ export default function Footer() {
           <FlowerSparkle delay={3.0} duration={3.0} x={25} y={-8} color="white" />
         </div>
 
-        {/* Bunga 3 - warna emas */}
+        {/* Bunga 3 */}
         <div className="absolute" style={{ left: '15%', bottom: '20%' }}>
           <motion.div
             style={{ width: '80px', height: '80px' }}
@@ -165,7 +170,7 @@ export default function Footer() {
           <FlowerSparkle delay={3.5} duration={2.4} x={5} y={-5} color="purple" />
         </div>
 
-        {/* Bunga 4 - warna biru */}
+        {/* Bunga 4 */}
         <div className="absolute" style={{ right: '20%', bottom: '30%' }}>
           <motion.div
             style={{ width: '50px', height: '50px' }}
@@ -180,7 +185,7 @@ export default function Footer() {
           <FlowerSparkle delay={3.2} duration={3.3} x={22} y={-6} color="pink" />
         </div>
 
-        {/* Bunga 5 - warna putih */}
+        {/* Bunga 5 */}
         <div className="absolute" style={{ left: '45%', top: '5%' }}>
           <motion.div
             style={{ width: '60px', height: '60px' }}
@@ -195,7 +200,7 @@ export default function Footer() {
           <FlowerSparkle delay={2.9} duration={2.5} x={-10} y={-10} color="blue" />
         </div>
 
-        {/* Bunga 6 - warna emerald */}
+        {/* Bunga 6 */}
         <div className="absolute" style={{ right: '35%', bottom: '5%' }}>
           <motion.div
             style={{ width: '70px', height: '70px' }}
@@ -217,7 +222,7 @@ export default function Footer() {
         <div className="h-[4px] w-full rounded-full bg-gradient-to-r from-[#8ED8FF] via-[#FFD6EA] to-[#8ED8FF]" />
       </div>
 
-      {/* ====== KONTEN UTAMA (sama persis) ====== */}
+      {/* ====== KONTEN UTAMA (card ungu) ====== */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -246,7 +251,6 @@ export default function Footer() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="flex flex-col gap-5"
             >
-              {/* Instagram */}
               <a href="https://www.instagram.com/userr.sararr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 px-8 py-5 rounded-[26px] bg-gradient-to-br from-purple-100/40 via-pink-100/40 to-rose-100/40 backdrop-blur-xl border border-white/60 shadow-[0_12px_40px_rgba(200,120,255,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-200/50 hover:via-pink-200/50 hover:to-rose-200/50 hover:scale-[1.02] cursor-pointer">
                 <div className="w-14 h-14 rounded-full bg-white/80 border border-purple-200 shadow-lg flex items-center justify-center">
                   <FaInstagram className="text-purple-700" size={20}/>
@@ -256,7 +260,6 @@ export default function Footer() {
                   <p className="text-rose-800 font-semibold">@userr.sararr</p>
                 </div>
               </a>
-              {/* GitHub */}
               <a href="https://github.com/sarahaull" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 px-8 py-5 rounded-[26px] bg-gradient-to-br from-purple-100/40 via-pink-100/40 to-rose-100/40 backdrop-blur-xl border border-white/60 shadow-[0_12px_40px_rgba(200,120,255,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-200/50 hover:via-pink-200/50 hover:to-rose-200/50 hover:scale-[1.02] cursor-pointer">
                 <div className="w-14 h-14 rounded-full bg-white/80 border border-purple-200 shadow-lg flex items-center justify-center">
                   <FaGithub className="text-purple-700" size={20}/>
@@ -266,14 +269,13 @@ export default function Footer() {
                   <p className="text-rose-800 font-semibold">sarahaull</p>
                 </div>
               </a>
-              {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/sarah-aulia-529ab6423" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 px-8 py-5 rounded-[26px] bg-gradient-to-br from-purple-100/40 via-pink-100/40 to-rose-100/40 backdrop-blur-xl border border-white/60 shadow-[0_12px_40px_rgba(200,120,255,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-200/50 hover:via-pink-200/50 hover:to-rose-200/50 hover:scale-[1.02] cursor-pointer">
+              <a href="https://linkedin.com/in/sarahaull" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 px-8 py-5 rounded-[26px] bg-gradient-to-br from-purple-100/40 via-pink-100/40 to-rose-100/40 backdrop-blur-xl border border-white/60 shadow-[0_12px_40px_rgba(200,120,255,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-200/50 hover:via-pink-200/50 hover:to-rose-200/50 hover:scale-[1.02] cursor-pointer">
                 <div className="w-14 h-14 rounded-full bg-white/80 border border-purple-200 shadow-lg flex items-center justify-center">
                   <FaLinkedin className="text-purple-700" size={20}/>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-purple-700 font-medium">LinkedIn</p>
-                  <p className="text-rose-800 font-semibold">Sarah Aulia</p>
+                  <p className="text-rose-800 font-semibold">sarahaull</p>
                 </div>
               </a>
             </motion.div>
@@ -318,8 +320,8 @@ export default function Footer() {
                   <MapPin className="text-purple-700" size={20}/>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-purple-700 font-medium">Address</p>
-                  <p className="text-rose-800 font-semibold">Depok, Indonesia</p>
+                  <p className="text-xs uppercase tracking-wider text-purple-700 font-medium">Alamat</p>
+                  <p className="text-rose-800 font-semibold">Bandung, Indonesia</p>
                 </div>
               </a>
             </motion.div>
