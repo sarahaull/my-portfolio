@@ -269,13 +269,13 @@ export default function Footer() {
                   <p className="text-rose-800 font-semibold">sarahaull</p>
                 </div>
               </a>
-              <a href="https://linkedin.com/in/sarahaull" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 px-8 py-5 rounded-[26px] bg-gradient-to-br from-purple-100/40 via-pink-100/40 to-rose-100/40 backdrop-blur-xl border border-white/60 shadow-[0_12px_40px_rgba(200,120,255,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-200/50 hover:via-pink-200/50 hover:to-rose-200/50 hover:scale-[1.02] cursor-pointer">
+              <a href="https://www.linkedin.com/in/sarah-aulia-529ab6423" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 px-8 py-5 rounded-[26px] bg-gradient-to-br from-purple-100/40 via-pink-100/40 to-rose-100/40 backdrop-blur-xl border border-white/60 shadow-[0_12px_40px_rgba(200,120,255,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-purple-200/50 hover:via-pink-200/50 hover:to-rose-200/50 hover:scale-[1.02] cursor-pointer">
                 <div className="w-14 h-14 rounded-full bg-white/80 border border-purple-200 shadow-lg flex items-center justify-center">
                   <FaLinkedin className="text-purple-700" size={20}/>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-purple-700 font-medium">LinkedIn</p>
-                  <p className="text-rose-800 font-semibold">sarahaull</p>
+                  <p className="text-rose-800 font-semibold">Sarah Aulia</p>
                 </div>
               </a>
             </motion.div>
@@ -321,7 +321,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-purple-700 font-medium">Alamat</p>
-                  <p className="text-rose-800 font-semibold">Bandung, Indonesia</p>
+                  <p className="text-rose-800 font-semibold">Depok, Indonesia</p>
                 </div>
               </a>
             </motion.div>
